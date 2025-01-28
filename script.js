@@ -74,3 +74,29 @@ contactForm.addEventListener('submit', e => {
     // Уведомление пользователя об успешной отправке
     alert('Ваше сообщение успешно отправлено!');
 });
+
+// Инициализация AOS
+AOS.init({
+    duration: 1200,
+});
+
+// Обработка отправки формы
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Остановим стандартную отправку формы
+
+    // Собираем данные из формы
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Проверим, что все поля заполнены
+    if (name && email && message) {
+        // Здесь можно добавить код для отправки данных на сервер (например, через AJAX или с использованием PHP)
+        document.getElementById('form-message').innerHTML = `<p style="color: green;">Сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.</p>`;
+        
+        // Очистим форму
+        document.getElementById('contact-form').reset();
+    } else {
+        document.getElementById('form-message').innerHTML = `<p style="color: red;">Пожалуйста, заполните все поля.</p>`;
+    }
+});
