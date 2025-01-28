@@ -8,7 +8,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
 }
 
 a {
@@ -21,7 +21,6 @@ ul {
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
@@ -68,8 +67,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* Уменьшаем высоту */
-    background: rgba(255, 255, 255, 0.95); /* Светлый фон с небольшим затемнением */
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -79,7 +78,7 @@ header {
 }
 
 .navbar .logo img {
-    height: 40px; /* Делаем логотип компактным */
+    height: 40px;
 }
 
 /* Меню */
@@ -94,7 +93,7 @@ header {
 
 .navbar-menu a {
     font-size: 16px;
-    color: #333;
+    color: var(--text-color);
     text-transform: uppercase;
     font-weight: 500;
     padding: 5px 10px;
@@ -102,22 +101,18 @@ header {
 }
 
 .navbar-menu a:hover {
-    color: #ff7f00;
+    color: var(--primary-color);
 }
 
 .search-icon {
     font-size: 20px;
     cursor: pointer;
-    color: #333;
+    color: var(--text-color);
     transition: color 0.3s ease;
 }
 
 .search-icon:hover {
-    color: #ff7f00;
-}
-
-.navbar-logo {
-    padding-left: 20px;
+    color: var(--primary-color);
 }
 
 /* Контент */
@@ -260,39 +255,53 @@ header {
     color: #fff;
 }
 
-/* Контакты */
-.contact {
-    padding: 60px 0;
-    background-color: #fff;
+/* Contact Section */
+.contacts {
+    padding: 4rem 0;
 }
-
+.contacts h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
 .contact-form input,
 .contact-form textarea {
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    font-size: 16px;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
-
 .contact-form button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #ff6600;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+    background-color: #e55d00;
 }
 
-.contact-form button:hover {
-    background-color: var(--hover-color);
-}
 
 .social-links {
     margin-top: 20px;
@@ -322,8 +331,9 @@ header {
 }
 
 .footer .logo img {
-    height: 80px; /* Делаем логотип компактным */
+    height: 80px;
 }
+
 .footer .footer-menu li {
     display: inline;
     margin: 0 10px;
