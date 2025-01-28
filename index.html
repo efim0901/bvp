@@ -146,3 +146,26 @@
     </script>
 </body>
 </html>
+
+<!-- PHP: send_mail.php -->
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $message = htmlspecialchars(trim($_POST['message']));
+
+    $to = "efimovich.w@gmail.com"; // Укажите ваш email
+    $subject = "Новое сообщение от $name";
+    $body = "Имя: $name\nEmail: $email\nСообщение:\n$message";
+    $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charset=utf-8";
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<h2>Спасибо! Ваше сообщение отправлено.</h2>";
+    } else {
+        echo "<h2>Извините, произошла ошибка при отправке. Попробуйте снова.</h2>";
+    }
+} else {
+    header("Location: index.html");
+    exit();
+}
+?>
