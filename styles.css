@@ -1,0 +1,382 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Цветовая палитра */
+:root {
+    --primary-color: #ff7f00;
+    --secondary-color: #333;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --border-color: #ddd;
+    --hover-color: #ff5c00;
+}
+
+/* Стиль для хедера */
+header {
+    position: relative;
+    height: 80vh;
+    background: url('https://img.freepik.com/free-vector/abstract-paper-style-background_474888-4053.jpg?t=st=1738069395~exp=1738072995~hmac=839c923ff5e842df677d75aa4a36b8c966ac6f9da1e60e95fa7052bb28dc75b2&w=1060') no-repeat center center/cover;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Уменьшаем высоту */
+    background: rgba(255, 255, 255, 0.95); /* Светлый фон с небольшим затемнением */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.navbar .logo img {
+    height: 40px; /* Делаем логотип компактным */
+}
+
+/* Меню */
+.navbar-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-menu li {
+    list-style: none;
+}
+
+.navbar-menu a {
+    font-size: 16px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #ff7f00;
+}
+
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: #ff7f00;
+}
+
+.navbar-logo {
+    padding-left: 20px;
+}
+
+/* Контент */
+.main-content {
+    padding-top: 120px;
+}
+
+.section {
+    padding-top: 60px;
+    background-color: var(--background-color);
+    padding: 40px 20px;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section h2, .section p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.section .content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section */
+.hero-content {
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+    color: #fff;
+    text-align: left;
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-content .btn {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Услуги */
+.services {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-item h3 {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.service-item p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Партнеры */
+.partners {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.partner-logos img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.partner-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* FAQ */
+.faq {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+
+.faq-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+}
+
+/* Контакты */
+.contact {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.contact-form button:hover {
+    background-color: var(--hover-color);
+}
+
+.social-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Футер */
+.footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .footer-menu {
+    margin-top: 10px;
+}
+
+.footer .logo img {
+    height: 80px; /* Делаем логотип компактным */
+}
+.footer .footer-menu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer .footer-menu a {
+    color: #fff;
+}
+
+.footer .footer-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background-color: var(--secondary-color);
+        width: 200px;
+        padding: 20px;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .hero-content {
+        bottom: 10%;
+        left: 10%;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partner-logos {
+        flex-direction: column;
+    }
+}
