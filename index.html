@@ -20,7 +20,7 @@
             <div class="container">
                 <nav class="navbar">
                     <div class="logo">
-                        <img src="logo.png" alt="Логотип" loading="lazy">
+                        <img src="images/logo.png" alt="Логотип" loading="lazy">
                     </div>
                     <ul class="navbar-menu">
                         <li><a href="#">Главная</a></li>
@@ -88,10 +88,10 @@
         <div class="container">
             <h2 data-aos="fade-right">Наши партнеры</h2>
             <div class="partner-logos" data-aos="zoom-in">
-                <img src="partner1.png" alt="ООО «Евроторг»" loading="lazy">
-                <img src="partner2.png" alt="Партнер 2" loading="lazy">
-                <img src="partner3.png" alt="Партнер 3" loading="lazy">
-                <img src="partner4.png" alt="Партнер 4" loading="lazy">
+                <img src="images/partner1.png" alt="ООО «Евроторг»" loading="lazy">
+                <img src="images/partner2.png" alt="Партнер 2" loading="lazy">
+                <img src="images/partner3.png" alt="Партнер 3" loading="lazy">
+                <img src="images/partner4.png" alt="Партнер 4" loading="lazy">
             </div>
         </div>
     </section>
@@ -132,7 +132,7 @@
     <!-- Футер -->
     <footer class="footer">
         <div class="logo">
-            <img src="logo.png" alt="Логотип" loading="lazy">
+            <img src="images/logo.png" alt="Логотип" loading="lazy">
         </div>
         <div class="container">
             <p>&copy; 2025 Белвторпереработка. Все права защищены.</p>
@@ -146,26 +146,3 @@
     </script>
 </body>
 </html>
-
-<!-- PHP: send_mail.php -->
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $message = htmlspecialchars(trim($_POST['message']));
-
-    $to = "efimovich.w@gmail.com"; // Укажите ваш email
-    $subject = "Новое сообщение от $name";
-    $body = "Имя: $name\nEmail: $email\nСообщение:\n$message";
-    $headers = "From: $email\r\nReply-To: $email\r\nContent-Type: text/plain; charset=utf-8";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<h2>Спасибо! Ваше сообщение отправлено.</h2>";
-    } else {
-        echo "<h2>Извините, произошла ошибка при отправке. Попробуйте снова.</h2>";
-    }
-} else {
-    header("Location: index.html");
-    exit();
-}
-?>
