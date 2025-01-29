@@ -63,6 +63,7 @@ header {
     height: 100%;
 }
 
+/* Навбар */
 .navbar {
     position: fixed;
     top: 0;
