@@ -515,8 +515,7 @@ header {
 
 /* Forced Colors Mode */
 @media (forced-colors: active) {
-    .element {
+    * {
         forced-color-adjust: auto;
-        /* Добавьте ваши стили */
     }
 }
