@@ -512,3 +512,11 @@ header {
 [data-aos="fade-up"] {
     animation: fadeInUp 1.2s ease-out forwards;
 }
+
+/* Forced Colors Mode */
+@media (forced-colors: active) {
+    .element {
+        forced-color-adjust: auto;
+        /* Добавьте ваши стили */
+    }
+}
