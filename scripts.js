@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarMenu = document.querySelector('.navbar-menu');
 
     menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
+        navbarMenu.classList.toggle('hidden');
     });
 });

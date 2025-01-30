@@ -95,6 +95,17 @@ header {
 .navbar-menu {
     display: flex;
     gap: 25px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar-menu.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .navbar-menu li {
@@ -121,6 +132,7 @@ header {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1100; /* Ensure it is above the menu */
 }
 
 .menu-toggle span {
@@ -129,6 +141,20 @@ header {
     background: var(--text-color);
     margin-bottom: 4px;
     border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Анимация открытия бургер-меню */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Hero section */
@@ -526,10 +552,6 @@ header {
     }
 
     .navbar-menu {
-        display: none;
-    }
-
-    .navbar-menu.active {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -539,6 +561,16 @@ header {
         background-color: var(--secondary-color);
         width: 200px;
         padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .navbar-menu.active {
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .hero-content {
