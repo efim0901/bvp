@@ -50,4 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-animate]').forEach(el => {
         observer.observe(el);
     });
+
+    // Переключение меню на мобильных устройствах
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    menuToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('active');
+    });
 });
